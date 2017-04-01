@@ -19,7 +19,7 @@ namespace TechJobs.Controllers
         // The detail display for a given Job at URLs like /Job?id=17
         public IActionResult Index(int id)
         {
-            // TODO #1 - get the Job with the given ID and pass it into the view
+            // DONE #1 - get the Job with the given ID and pass it into the view
             
             Job singleJob = jobData.Find(id);
             return View(singleJob);
