@@ -98,8 +98,8 @@ namespace TechJobs.Data
             var results = from j in Jobs
                           where j.ID == id
                           select j;
-
-            return results.Single();
+            
+            return results.Single(); 
         }
 
     }
