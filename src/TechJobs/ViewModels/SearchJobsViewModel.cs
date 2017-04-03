@@ -11,22 +11,22 @@ namespace TechJobs.ViewModels
         // to BaseViewModel
 
         // The search results
-        public List<Job> Jobs { get; set; }
+        public List<Job> Jobs { get; set; } // keep
 
         // The column to search, defaults to all
-        public JobFieldType Column { get; set; } = JobFieldType.All;
+        public JobFieldType Column { get; set; } = JobFieldType.All; // keep
 
         // The search value
-        [Display(Name = "Keyword:")]
+        [Display(Name = "Keyword:")] // keep
         public string Value { get; set; } = "";
 
         // All columns, for display
-        public List<JobFieldType> Columns { get; set; }
+        // public List<JobFieldType> Columns { get; set; } // dup
 
         // View title
-        public string Title { get; set; } = "";
+        // public string Title { get; set; } = ""; // dup
 
-        public SearchJobsViewModel()
+        /* public SearchJobsViewModel() // dup
         {
             // Populate the list of all columns
 
@@ -36,7 +36,7 @@ namespace TechJobs.ViewModels
             {
                 Columns.Add(enumVal);
             }
-
+            */
 
         }
     }
