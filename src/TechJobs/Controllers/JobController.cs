@@ -40,14 +40,16 @@ namespace TechJobs.Controllers
             if (ModelState.IsValid)
             {
                 Job newJob = new Job();
-                newJob.Name = newJobViewModel.Name; // Because it is just a string, nothing to compare to
+                newJob.Name = newJobViewModel.Name; // Because it is just a new string, nothing to compare to
                 newJob.Employer = jobData.Employers.Find(newJobViewModel.EmployerID);
                 newJob.Location = jobData.Locations.Find(newJobViewModel.LocationID);
                 newJob.CoreCompetency = jobData.CoreCompetencies.Find(newJobViewModel.CoreCompetencyID);
                 newJob.PositionType = jobData.PositionTypes.Find(newJobViewModel.PositionID);
 
                 jobData.Jobs.Add(newJob);
-                return RedirectToAction("Index", new { id = newJob.ID });
+                // TODO 8 - Make sure this version of this works once I finish making 7s work.
+                //return RedirectToAction("Index", new { id = newJob.ID });
+                return Redirect(string.Format("/Job?id={0}", newJob.ID)); 
             }
             else
             {

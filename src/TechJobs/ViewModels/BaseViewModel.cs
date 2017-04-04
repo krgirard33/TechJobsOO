@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using TechJobs.Models;
 
 namespace TechJobs.ViewModels
 {
@@ -9,7 +9,7 @@ namespace TechJobs.ViewModels
     {
         // TODO #7.0 - Extract members common to JobFieldsViewModel and 
         // SearchJobsViewModel to BaseViewModel
-
+        
         // The search results
         // public List<Job> Jobs { get; set; } // No
 
@@ -26,7 +26,9 @@ namespace TechJobs.ViewModels
         // View title
         public string Title { get; set; } = ""; // yes
 
-        /* public SearchJobsViewModel() // No... public JobFieldsViewModel() & public SearchJobsViewModel()
+        public BaseViewModel() // No... combine public JobFieldsViewModel() & public SearchJobsViewModel()
+                               // OK this is likely going to be solved using interfaces. 
+                               // Look at http://stackoverflow.com/questions/178333/multiple-inheritance-in-c-sharp
         {
             // Populate the list of all columns
 
@@ -37,5 +39,5 @@ namespace TechJobs.ViewModels
                 Columns.Add(enumVal);
             }
         }
-        */
+    }
 }
